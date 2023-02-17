@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a onclick="render()" id="home">HOME</a>
+            <a onclick="darkMode()" id="mode">MODEDARK</a>
+            <a onclick="lightMode()">MODELIGHT</a>
+        </nav>
+        <h3></h3>JUST PLAY ON
+        <p class="informasi" id="informasi"></p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const body = document.body;
+        let informasi = document.getElementById("informasi");
+        let mode = document.getElementById("mode");
+        let home = document.getElementById("home");
+        let berani = document.getElementById("modeLight");
+
+        const darkLimit = 10;
+        let darkCounter = 0;
+        let darkRemainingLeft;
+
+        function darkMode() {
+            if (darkRemainingLeft == 1) {
+                informasi.textContent = ` SLOW BRO JATAH DARK MODE SAMPUN TELAS MATUR TEKKHYU `
+                mode.style.display = 'none';
+                home.textContent = "RESTART"
+                return;
+            }
+            darkCounter += 1;
+            darkRemainingLeft = darkLimit - darkCounter;
+
+            // render ke informasi element
+            informasi.textContent = `Dark mode dipakai ${darkCounter} x tersisa ${darkRemainingLeft}`
+            body.classList.toggle("dark");
+        }
+
+        function render() {
+            location.reload();
+        }
+
+        function lightMode() {
+            console.log(`mode light hidup`);
+            body.classList.toggle("light")
+        }
+    </script>
+
+</body>
+
+</html>
