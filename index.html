@@ -14,7 +14,7 @@
         <nav>
             <a onclick="render()" id="home">HOME</a>
             <a onclick="darkMode()" id="mode">MODEDARK</a>
-            <a onclick="lightMode()">MODELIGHT</a>
+            <a onclick="lightMode()" id="modeLight">MODELIGHT</a>
         </nav>
         <h3></h3>JUST PLAY ON
         <p class="informasi" id="informasi"></p>
@@ -26,7 +26,7 @@
         let informasi = document.getElementById("informasi");
         let mode = document.getElementById("mode");
         let home = document.getElementById("home");
-        let berani = document.getElementById("modeLight");
+        let light = document.getElementById("modeLight");
 
         const darkLimit = 10;
         let darkCounter = 0;
@@ -52,7 +52,16 @@
         }
 
         function lightMode() {
-            console.log(`mode light hidup`);
+            if (darkRemainingLeft == 1) {
+                home.textContent = "RESTART"
+                Light.style.display = "none"
+                return;
+            }
+            darkCounter += 1;
+            darkRemainingLeft = darkLimit - darkCounter;
+
+            // render ke informasi mode light
+            informasi.textContent = `Dark mode dipakai ${darkCounter} x tersisa ${darkRemainingLeft}`
             body.classList.toggle("light")
         }
     </script>
