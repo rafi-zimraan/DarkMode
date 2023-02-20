@@ -16,13 +16,14 @@
             <a onclick="darkMode()" id="mode">MODEDARK</a>
             <a onclick="lightMode()" id="modeLight">MODELIGHT</a>
         </nav>
-        <h3></h3>JUST PLAY ON
+        <h1>JUST PLAY ON</h1>
         <p class="informasi" id="informasi"></p>
     </div>
 
     <!-- JAVASCRIPT -->
     <script>
         const body = document.body;
+
         let informasi = document.getElementById("informasi");
         let mode = document.getElementById("mode");
         let home = document.getElementById("home");
@@ -35,8 +36,9 @@
         function darkMode() {
             if (darkRemainingLeft == 1) {
                 informasi.textContent = ` SLOW BRO JATAH DARK MODE SAMPUN TELAS MATUR TEKKHYU `
-                mode.style.display = 'none';
+                mode.style.display = "none"
                 home.textContent = "RESTART"
+                modeLight.style.display = "none"
                 return;
             }
             darkCounter += 1;

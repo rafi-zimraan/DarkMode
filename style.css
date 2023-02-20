@@ -35,20 +35,20 @@ body {
     align-items: center;
     position: absolute;
     top: 10%;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     animation: discotik .5s infinite;
     -webkit-animation: discotik .5s infinite;
 }
 @keyframes discotik {
     0% {
-        font-size: 12px;
+        font-size: 16px;
     }
     50% {
-        font-size: 15px;
+        font-size: 18px;
     }
     100% {
-        font-size: 12px;
+        font-size: 20px;
     }
 }
 
